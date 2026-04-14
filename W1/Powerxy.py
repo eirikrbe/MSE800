@@ -1,19 +1,19 @@
 
-# W1 Act 3 - Power (x,y)
+# W1 Act 3&4 - Power (x,y)
 #Powerxy is a program that calculates the power of a number given a base and an exponent.
 
-def get_in(promp):
+def get_in(value):
     while True:
         try:
-            return float(input(promp))
+            return float(input(value))
         except ValueError:
             print("Invalid input, please enter a float.")
-    
-def powerxy(x,y):
+
+def powerxy(x, y):
     return x ** y
 
 def main():
-    print("W1 Act 3 - Power (x,y)")
+    print("W1 Act 3&4 - Power (x,y)")
     
     while True:
         base = get_in("Enter the Base: ")
