@@ -2,7 +2,7 @@
 # W1 Act 3&4 - Power (x,y)
 #Powerxy is a program that calculates the power of a number given a base and an exponent.
 
-def get_in(value):
+def get_float_input(value):
     while True:
         try:
             return float(input(value))
@@ -16,9 +16,9 @@ def main():
     print("W1 Act 3&4 - Power (x,y)")
     
     while True:
-        base = get_in("Enter the Base: ")
-        exp = get_in("Enter the Exponent: ")
-
+        base = get_float_input("Enter the Base: ")
+        exp = get_float_input("Enter the Exponent: ")
+        ## Prevent undefined operation where base is 0 and exponent is non-positive
         if base == 0 and exp <= 0:
             print("Undefined: 0 cannot be raised to a non-positive exponent.")
             continue

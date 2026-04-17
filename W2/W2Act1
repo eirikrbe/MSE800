@@ -1,0 +1,51 @@
+## Week 2 – Activity 1: mathematical operations
+
+import math
+
+
+def operations(x, y, operator):
+    if operator == "+":
+        return x + y
+    elif operator == "-":
+        return x - y
+    elif operator == "*":
+        return x * y
+    elif operator == "/":
+        if y != 0:
+            return x / y
+        else:
+            print("Error: Division by zero is not allowed.")
+            return None
+    elif operator == "%":
+        if y != 0:
+            return x % y
+        else:
+            print("Error: Division by zero is not allowed.")
+            return None
+    else:
+        print("Invalid operator.")
+        return None
+
+def main():
+    print("W2 Act 1 - mathematical operations (x,y)")
+    
+    while True:
+
+        numbera = complex(input("Enter number a: "))
+        numberb = complex(input("Enter number b: "))
+
+        operator = input("Enter the operator (+, -, *, /, %): ")
+
+        result = operations(numbera, numberb, operator)
+
+        if result is not None:
+            print(f"The result of {numbera} {operator} {numberb} is {result}")
+        break
+
+while True:
+    main()  
+
+    choice = input("Do you want to continue (y/n)?: ").lower()
+    if choice != "y":
+        print("Program finished.")
+        break
