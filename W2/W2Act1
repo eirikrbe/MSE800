@@ -1,7 +1,8 @@
 ## Week 2 – Activity 1: mathematical operations
 
-import math
 
+#def get_tpe():
+#    return input("Do you want to work with real numbers (r) or complex numbers (c)?: ").lower()
 
 def operations(x, y, operator):
     if operator == "+":
@@ -31,8 +32,17 @@ def main():
     
     while True:
 
-        numbera = complex(input("Enter number a: "))
-        numberb = complex(input("Enter number b: "))
+        tipe = input("Do you want to work with real numbers (r) or complex numbers (c)?: ").lower()
+
+        if tipe == "r":
+            numbera = float(input("Enter number a: "))
+            numberb = float(input("Enter number b: "))
+        elif tipe == "c":
+            numbera = complex(input("Enter number a: "))
+            numberb = complex(input("Enter number b: "))
+        else:
+            print("Invalid input. Please enter 'r' for real numbers or 'c' for complex numbers.")
+            continue
 
         operator = input("Enter the operator (+, -, *, /, %): ")
 
