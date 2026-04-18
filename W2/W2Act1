@@ -1,18 +1,23 @@
-## Week 2 – Activity 1: mathematical operations
 
+print("Week 2 – Activity 1: mathematical operations")
 
-
-def get_type(choice):
-      if choice == "r":
-        numbera = float(input("Enter number a: "))
-        numberb = float(input("Enter number b: "))
-      elif choice == "c":
-        numbera = complex(input("Enter number a: "))
-        numberb = complex(input("Enter number b: "))
-      else:
-        print("Invalid input. Please enter 'r' for real numbers or 'c' for complex numbers.") 
-        return None, None
-      return  numbera, numberb
+def get_numbers():
+    while True:
+        try:
+            choice = input("Do you want to work with real numbers (r) or complex numbers (c)?: ").lower()
+            if choice == "r":
+                numbera = float(input("Enter number a: "))
+                numberb = float(input("Enter number b: "))
+            elif choice == "c":
+                numbera = complex(input("Enter number a: "))
+                numberb = complex(input("Enter number b: "))
+            else:
+                print("Invalid input. Please enter 'r' for real numbers or 'c' for complex numbers.") 
+                continue
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            continue
+        return numbera, numberb
 
 def operations(x, y, operator):
     if operator == "+":
@@ -28,7 +33,11 @@ def operations(x, y, operator):
             print("Error: Division by zero is not allowed.")
             return None
     elif operator == "%":
-        if y != 0:
+        # Modulo is restricted to real numbers in this calculator.
+        if isinstance(x, complex) or isinstance(y, complex):
+            print("Error: Modulo operation is not supported for complex numbers.")
+            return None
+        elif y != 0:
             return x % y
         else:
             print("Error: Division by zero is not allowed.")
@@ -42,7 +51,7 @@ def main():
     
     while True:
 
-        numbera, numberb = get_type(input("Do you want to work with real numbers (r) or complex numbers (c)?: ").lower())
+        numbera, numberb = get_numbers()
 
         operator = input("Enter the operator (+, -, *, /, %): ")
 
@@ -50,7 +59,7 @@ def main():
 
         if result is not None:
             print(f"The result of {numbera} {operator} {numberb} is {result}")
-        break
+            break
 
 while True:
     main()  
