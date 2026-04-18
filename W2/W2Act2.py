@@ -1,7 +1,4 @@
 
-from turtle import st
-
-
 students = []
 
 class Student:
