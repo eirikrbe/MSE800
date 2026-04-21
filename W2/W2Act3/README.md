@@ -2,7 +2,7 @@
 
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/eirikrbe/MSE800-PSD/tree/main/W2/W2Act3)
 
-A command-line calculator that performs basic mathematical operations on real and complex numbers.
+A command-line calculator that performs basic mathematical operations on real and complex numbers, using one class with four methods and four functions.
 
 
 ## Features

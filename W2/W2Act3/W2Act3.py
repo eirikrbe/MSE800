@@ -55,6 +55,12 @@ class Calculator:
         elif self.operator == "%":
             return self.a % self.b
         raise ValueError(f"Unsupported operator: {self.operator}")
+    
+    def __str__(self):
+        """Returns the operation as a string for display purposes."""
+        
+        return f"{self.a} {self.operator} {self.b}"
+    
 
 def get_number_kind():
     while True:
@@ -102,7 +108,7 @@ def main():
 
             result = operation.calculate()
             print()
-            print(f"The result of {a} {operator} {b} is {result}")
+            print(f"The result of {operation} is {result}")
             print()
 
         except (ZeroDivisionError, TypeError, ValueError) as e:
