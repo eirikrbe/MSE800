@@ -1,40 +1,58 @@
-# Powerxy Calculator
+# Week 2 – Activity 3: OOP mathematical operations
 
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/eirikrbe/MSE800-PSD)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/eirikrbe/MSE800-PSD/tree/main/W2/W2Act3)
 
-This program calculates the power of a given base raised to an exponent. It includes input validation to ensure valid numbers are accepted and allows the user to interact with the app.
+A command-line calculator that performs basic mathematical operations on real and complex numbers.
+
 
 ## Features
 
-- Interactive user input for base and exponent.
-- Error handling for invalid (non-numeric) inputs.
-- Validation to reject undefined cases (0 raised to a non-positive exponent).
-- Loop-based retry on invalid input.
-- Option to continue calculations or exit.
+- Supports real and complex number arithmetic.
+- Handles five operators: +, -, *, /, %.
+- Displays clear error messages for invalid operations.
+- Prompts users to re-enter if the input is invalid.
+- Option to continue or exit after each calculation.
+
+## Usage
+```bash
+python W2Act3.py
+```
 
 ### Screenshot
 
-![Powerxy Calculator screenshot](powerxy-screenshot.png)
+![OOP mathematical operations](OOPmath-screenshot.png)
 
 ### Example Interaction
 
 ```
-Enter the Base: 0
-Enter the Exponent: -1
-Undefined: 0 cannot be raised to a non-positive exponent.
-Enter the Base: 2
-Enter the Exponent: 3
-2.0 raised to the power of 3.0 is 8.0
-Do you want to continue? (y/n): y
-Enter the Base: 1.5
-Enter the Exponent: -2
-1.5 raised to the power of -2.0 is 0.4444444444444444
-Do you want to continue? (y/n): n
-Program finished.
+Do you want to work with real numbers (r) or complex numbers (c)?: r
+Enter number a: 2
+Enter number b: 2
+Enter the operator (+, -, *, /, %): +
+The result of 2.0 + 2.0 is 4.0
+Do you want to perform another calculation? (y/n): y
+Do you want to work with real numbers (r) or complex numbers (c)?: c
+Enter number a: 2-j
+Enter number b: 2+j
+Enter the operator (+, -, *, /, %): *
+The result of (2-1j) * (2+1j) is (5+0j)
+Do you want to perform another calculation? (y/n): y
+Do you want to work with real numbers (r) or complex numbers (c)?: r
+Enter number a: 2
+Enter number b: 0
+Enter the operator (+, -, *, /, %): /
+Error: Division by zero is not allowed.
+Do you want to perform another calculation? (y/n): n
 ```
+
+## Error Handling
+
+- Dividing by zero displays: `Error: Division by zero is not allowed.`
+- Modulo by zero displays: `Error: Modulo by zero is not allowed.`
+- Modulo with complex numbers displays: `Error: Modulo operation is not supported for complex numbers.`
 
 ## Environment
 
-- Python 3.x
-- Anaconda (Custom environment "W1Env 3.8.20")
-- Visual studio code
+- Python 3.8.20
+- Anaconda (W1Env)
+- Visual Studio Code
