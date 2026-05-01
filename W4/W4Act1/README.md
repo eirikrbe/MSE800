@@ -9,7 +9,7 @@
 
 The data base contains five entities for a finance  money exchange software application. The purpose of the database design is to organise the main data required for a system where users can exchange money between different currencies.
 
-![W4Act1](W3Act2.drawio.png)
+![W4Act1](W4Act1.drawio.png)
 
 ## Data Base
 
