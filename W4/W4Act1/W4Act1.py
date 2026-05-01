@@ -59,10 +59,24 @@ conn.commit()
 cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
 tables = cursor.fetchall()
 
-print("Database path:", DB_PATH.resolve())
-print("Tables created:")
+print("Database path:", DB_PATH)
+print("\nTables and columns:")
 
 for table in tables:
-    print("-", table[0])
+    table_name = table[0]
+    print(f"\nTable: {table_name}")
+
+    cursor.execute(f"PRAGMA table_info({table_name});")
+    columns = cursor.fetchall()
+
+    for column in columns:
+        column_id = column[0]
+        column_name = column[1]
+        column_type = column[2]
+        not_null = column[3]
+        default_value = column[4]
+        primary_key = column[5]
+
+        print(f"  - {column_name} ({column_type})")
 
 conn.close()
